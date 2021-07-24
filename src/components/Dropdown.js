@@ -6,9 +6,9 @@ class Dropdown extends React.Component {
 		return (
 			<div className="dropdown">
 				<div className="dropdown__header">
-					<div class="title">{this.props.title}</div>
-					<div class="chevron">
-						<i class="fas fa-chevron-up"></i>
+					<div className="title">{this.props.title}</div>
+					<div className="chevron">
+						<i className="fas fa-chevron-up"></i>
 					</div>
 				</div>
 				<div className="dropdown__content">
