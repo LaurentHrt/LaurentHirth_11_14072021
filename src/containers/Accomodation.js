@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import '../styles/Accomodation.css'
 
 function Accomodation() {
-	let { id } = useParams()
+	const { id } = useParams()
+	const [data, setData] = useState({})
 
-	return <h1>Accomodation {id}</h1>
+	async function getData() {
+		const response = await fetch('../logements.json')
+		const data = await response.json()
+		setData(data.find((accomodation) => accomodation.id === id))
+	}
+
+	useEffect(() => getData(), [])
+
+	return <h2>{data.title}</h2>
 }
 
 export default Accomodation

@@ -1,22 +1,32 @@
 import React, { Fragment } from 'react'
-import { useRouteMatch, Link, Switch, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../styles/Home.css'
-import Accomodation from './Accomodation'
 
 class Home extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = { data: [] }
+	}
+
+	async getData() {
+		const response = await fetch('./logements.json')
+		const data = await response.json()
+		this.setState({ data: data })
+	}
+
+	componentDidMount() {
+		this.getData()
+	}
+
 	render() {
 		return (
 			<Fragment>
 				<h1>Home</h1>
-				<Link to="/home/1234">Acomodation 1234</Link>
-				<br />
-				<Link to="/home/5678">Acomodation 5678</Link>
-
-				<Switch>
-					<Route path="/home/:id">
-						<Accomodation />
-					</Route>
-				</Switch>
+				{this.state.data.map((accomodation) => (
+					<Link key={accomodation.id} to={`/accomodations/${accomodation.id}`}>
+						Accomodation {accomodation.id}
+					</Link>
+				))}
 			</Fragment>
 		)
 	}

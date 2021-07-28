@@ -11,7 +11,7 @@ class Header extends React.Component {
 					<img src={logo} alt="Logo Kasa" />
 				</a>
 				<nav>
-					<Link to="/home">Accueil</Link>
+					<Link to="/">Accueil</Link>
 					<Link to="/about">A propos</Link>
 				</nav>
 			</header>
