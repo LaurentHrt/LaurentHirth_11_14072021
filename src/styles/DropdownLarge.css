@@ -4,6 +4,7 @@
 }
 
 .dropdownLarge__header {
+	cursor: pointer;
 	height: 47px;
 	display: flex;
 	flex-direction: row;

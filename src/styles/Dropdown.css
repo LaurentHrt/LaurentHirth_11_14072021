@@ -3,6 +3,7 @@
 }
 
 .dropdown__header {
+	cursor: pointer;
 	height: 52px;
 	display: flex;
 	flex-direction: row;
