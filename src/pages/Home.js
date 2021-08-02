@@ -1,7 +1,5 @@
 import React, { Fragment } from 'react'
-import { Link } from 'react-router-dom'
-import Dropdown from '../components/Dropdown'
-import DropdownLarge from '../components/DropdownLarge'
+import Thumb from '../components/Thumb'
 import '../styles/Home.css'
 
 class Home extends React.Component {
@@ -23,20 +21,18 @@ class Home extends React.Component {
 	render() {
 		return (
 			<Fragment>
+				{console.log(this.state.data)}
 				<h1>Home</h1>
-				<Dropdown title="Test" content="Test" />
-				<DropdownLarge title="Test" content="Test" />
-				{this.state.data.map((accomodation) => (
-					<Fragment>
-						<Link
+				<div className="thumb-container">
+					{this.state.data.map((accomodation) => (
+						<Thumb
 							key={accomodation.id}
-							to={`/accomodations/${accomodation.id}`}
-						>
-							Accomodation {accomodation.id}
-						</Link>
-						<br />
-					</Fragment>
-				))}
+							id={accomodation.id}
+							title={accomodation.title}
+							cover={accomodation.cover}
+						/>
+					))}
+				</div>
 			</Fragment>
 		)
 	}

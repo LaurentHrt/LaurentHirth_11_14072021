@@ -1,20 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { Fragment } from 'react'
+import { withRouter } from 'react-router-dom'
 import '../styles/Accomodation.css'
+import CarrouselLarge from './../components/CarrouselLarge'
+import Tag from './../components/Tag'
 
-function Accomodation() {
-	const { id } = useParams()
-	const [data, setData] = useState({})
-
-	async function getData() {
-		const response = await fetch('../logements.json')
-		const data = await response.json()
-		setData(data.find((accomodation) => accomodation.id === id))
+class Accomodation extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = { accommodation: {} }
 	}
 
-	useEffect(() => getData(), [])
+	componentDidMount() {
+		const id = this.props.match.params.id
+		this.getData(id)
+	}
 
-	return <h2>{data.title}</h2>
+	async getData(id) {
+		const response = await fetch('../logements.json')
+		const data = await response.json()
+		this.setState({
+			accommodation: data.find((accomodation) => accomodation.id === id),
+		})
+		console.log(this.state.accommodation)
+	}
+
+	render() {
+		return (
+			<Fragment>
+				{/* !! Poser la question à Karim */}
+				{this.state.accommodation.pictures ? (
+					<CarrouselLarge images={this.state.accommodation.pictures} />
+				) : null}
+				<h1>{this.state.accommodation.title}</h1>
+				<h2>{this.state.accommodation.location}</h2>
+				<div className="tags">
+					{this.state.accommodation.tags
+						? this.state.accommodation.tags.map((tag) => (
+								<Tag tagName={tag} key={tag} />
+						  ))
+						: null}
+				</div>
+			</Fragment>
+		)
+	}
 }
 
-export default Accomodation
+export default withRouter(Accomodation)
