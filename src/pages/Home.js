@@ -27,9 +27,15 @@ class Home extends React.Component {
 				<Dropdown title="Test" content="Test" />
 				<DropdownLarge title="Test" content="Test" />
 				{this.state.data.map((accomodation) => (
-					<Link key={accomodation.id} to={`/accomodations/${accomodation.id}`}>
-						Accomodation {accomodation.id}
-					</Link>
+					<Fragment>
+						<Link
+							key={accomodation.id}
+							to={`/accomodations/${accomodation.id}`}
+						>
+							Accomodation {accomodation.id}
+						</Link>
+						<br />
+					</Fragment>
 				))}
 			</Fragment>
 		)
