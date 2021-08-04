@@ -2,9 +2,32 @@ header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	margin: 15px;
 }
 
 nav {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
+}
+
+nav a {
+	text-decoration: none;
+	line-break: strict;
+	text-transform: uppercase;
+	color: #ff6060;
+	white-space: nowrap;
+	font-size: 12px;
+}
+
+nav a:visited {
+	text-decoration: none;
+}
+
+nav a:first-child {
+	margin-right: 10px;
+}
+
+header .logo {
+	width: 140px;
 }

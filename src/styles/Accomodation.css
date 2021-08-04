@@ -1,0 +1,9 @@
+.accomodation-page {
+	margin: 0 15px;
+}
+
+.tags {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}

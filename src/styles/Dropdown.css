@@ -1,5 +1,6 @@
 .dropdown {
-	width: 580px;
+	width: 100%;
+	max-width: 500px;
 }
 
 .dropdown__header {
@@ -16,6 +17,7 @@
 .dropdown__header .title {
 	align-self: center;
 	padding-left: 20px;
+	text-transform: capitalize;
 }
 
 .dropdown__header .chevron {

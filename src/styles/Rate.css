@@ -1,0 +1,11 @@
+.rate {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+	color: #e3e3e3;
+	font-size: 14px;
+}
+
+.rate .checked {
+	color: #ff6060;
+}

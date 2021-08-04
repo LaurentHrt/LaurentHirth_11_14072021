@@ -1,12 +1,13 @@
 .thumb {
 	position: relative;
-	width: 340px;
-	height: 340px;
 	background-color: #ff6060;
 	border-radius: 10px;
+	height: 45vh;
+	width: 100%;
 }
 
 .thumb p {
+	font-size: 18px;
 	box-sizing: border-box;
 	color: white;
 	border-bottom-left-radius: 10px;

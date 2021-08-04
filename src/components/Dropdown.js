@@ -28,8 +28,8 @@ class Dropdown extends React.Component {
 				>
 					{Array.isArray(this.props.content) ? (
 						<ul>
-							{this.props.content.map((element) => (
-								<li>{element}</li>
+							{this.props.content.map((element, index) => (
+								<li key={index}>{element}</li>
 							))}
 						</ul>
 					) : (

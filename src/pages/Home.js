@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import Baseline from '../components/Baseline'
 import Thumb from '../components/Thumb'
 import '../styles/Home.css'
 
@@ -21,8 +22,7 @@ class Home extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				{console.log(this.state.data)}
-				<h1>Home</h1>
+				<Baseline />
 				<div className="thumb-container">
 					{this.state.data.map((accomodation) => (
 						<Thumb
