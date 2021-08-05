@@ -1,0 +1,22 @@
+.E404-container {
+	height: 80vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.E404-container * {
+	color: #ff6060;
+	text-align: center;
+}
+.E404-container h1 {
+	font-size: 86px;
+	margin-bottom: 10px;
+}
+
+.E404-container p {
+	font-size: 18px;
+	width: 70vw;
+	margin-bottom: 150px;
+}
