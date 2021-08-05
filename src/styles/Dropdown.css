@@ -1,6 +1,7 @@
 .dropdown {
 	width: 100%;
 	max-width: 500px;
+	margin-bottom: 20px;
 }
 
 .dropdown__header {
@@ -27,14 +28,11 @@
 }
 
 .dropdown__content {
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
 	background-color: #f6f6f6;
 	color: #ff6060;
-	padding: 20px;
-	padding-top: 20px;
-	padding-bottom: 15px;
-	position: relative;
-	top: -10px;
-	z-index: -1;
+	padding: 15px 20px;
 }
 
 .dropdown__content ul {

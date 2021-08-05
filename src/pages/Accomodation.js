@@ -1,5 +1,5 @@
 import React from 'react'
-import { withRouter } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import '../styles/Accomodation.css'
 import Tag from './../components/Tag'
 import Carrousel from './../components/Carrousel'
@@ -42,7 +42,9 @@ class Accomodation extends React.Component {
 	}
 
 	render() {
-		return (
+		return this.state.accomodation === undefined ? (
+			<Redirect to="/E404" />
+		) : (
 			<div className="accomodation-page">
 				<Carrousel images={this.state.accomodation.pictures} />
 				<AccomodationTitle
@@ -54,11 +56,13 @@ class Accomodation extends React.Component {
 						<Tag tagName={tag} key={tag} />
 					))}
 				</div>
-				<Host
-					name={this.state.accomodation.host.name}
-					picture={this.state.accomodation.host.picture}
-				/>
-				<Rate rate={this.state.accomodation.rating} />
+				<div className="ratehost-container">
+					<Rate rate={this.state.accomodation.rating} />
+					<Host
+						name={this.state.accomodation.host.name}
+						picture={this.state.accomodation.host.picture}
+					/>
+				</div>
 				<Dropdown
 					title="Description"
 					content={this.state.accomodation.description}

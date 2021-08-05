@@ -2,8 +2,16 @@
 	margin: 0 15px;
 }
 
+.accomodation-page .ratehost-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px 0;
+}
+
 .tags {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap: 10px;
 }
