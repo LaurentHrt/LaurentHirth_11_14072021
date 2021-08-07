@@ -3,9 +3,11 @@ import '../styles/Carrousel.css'
 
 class Carrousel extends React.Component {
 	render() {
+		const { images } = this.props
+
 		return (
 			<div className="carrousel">
-				{this.props.images.map((image, index) => (
+				{images.map((image, index) => (
 					<img key={index} src={image} alt={image} />
 				))}
 			</div>

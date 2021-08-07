@@ -9,14 +9,14 @@ class Home extends React.Component {
 		this.state = { data: [] }
 	}
 
+	componentDidMount() {
+		this.getData()
+	}
+
 	async getData() {
 		const response = await fetch('./logements.json')
 		const data = await response.json()
 		this.setState({ data: data })
-	}
-
-	componentDidMount() {
-		this.getData()
 	}
 
 	render() {

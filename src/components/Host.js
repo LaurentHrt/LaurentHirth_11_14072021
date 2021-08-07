@@ -3,10 +3,11 @@ import '../styles/Host.css'
 
 class Host extends React.Component {
 	render() {
+		const { name, picture } = this.props
 		return (
 			<div className="host">
-				<p>{this.props.name}</p>
-				<img src={this.props.picture} alt="Host" />
+				<p>{name}</p>
+				<img src={picture} alt="Host" />
 			</div>
 		)
 	}

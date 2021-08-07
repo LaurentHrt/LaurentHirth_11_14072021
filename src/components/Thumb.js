@@ -4,11 +4,13 @@ import '../styles/Thumb.css'
 
 class Thumb extends React.Component {
 	render() {
+		const { id, title, cover } = this.props
+
 		return (
 			<div className="thumb">
-				<Link to={`/accomodations/${this.props.id}`}>
-					<p>{this.props.title}</p>
-					<img src={this.props.cover} alt={this.props.title} />
+				<Link to={`/accomodations/${id}`}>
+					<p>{title}</p>
+					<img src={cover} alt={title} />
 				</Link>
 			</div>
 		)

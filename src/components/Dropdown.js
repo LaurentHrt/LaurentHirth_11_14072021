@@ -8,13 +8,15 @@ class Dropdown extends React.Component {
 	}
 
 	render() {
+		const { title, content } = this.props
+
 		return (
 			<div className="dropdown">
 				<div
 					className="dropdown__header"
 					onClick={() => this.setState({ isOpen: !this.state.isOpen })}
 				>
-					<div className="title">{this.props.title}</div>
+					<div className="title">{title}</div>
 					<div className="chevron">
 						<i
 							className={
@@ -26,14 +28,14 @@ class Dropdown extends React.Component {
 				<div
 					className={this.state.isOpen ? 'dropdown__content' : 'display-none'}
 				>
-					{Array.isArray(this.props.content) ? (
+					{Array.isArray(content) ? (
 						<ul>
-							{this.props.content.map((element, index) => (
+							{content.map((element, index) => (
 								<li key={index}>{element}</li>
 							))}
 						</ul>
 					) : (
-						<p>{this.props.content}</p>
+						<p>{content}</p>
 					)}
 				</div>
 			</div>
