@@ -3,7 +3,6 @@ import { Redirect, withRouter } from 'react-router-dom'
 import '../styles/Accomodation.css'
 import Tag from './../components/Tag'
 import Carrousel from './../components/Carrousel'
-import AccomodationTitle from './../components/AccomodationTitle'
 import Host from './../components/Host'
 import Rate from './../components/Rate'
 import Dropdown from './../components/Dropdown'
@@ -47,30 +46,38 @@ class Accomodation extends React.Component {
 		) : (
 			<div className="accomodation-page">
 				<Carrousel images={this.state.accomodation.pictures} />
-				<AccomodationTitle
-					title={this.state.accomodation.title}
-					location={this.state.accomodation.location}
-				/>
-				<div className="tags">
-					{this.state.accomodation.tags.map((tag) => (
-						<Tag tagName={tag} key={tag} />
-					))}
+				<div className="accomodation-header">
+					<div className="titletag-container">
+						<p className="accommodationTitle">
+							{this.state.accomodation.title}
+						</p>
+						<p className="accommodationLocation">
+							{this.state.accomodation.location}
+						</p>
+						<div className="tags">
+							{this.state.accomodation.tags.map((tag) => (
+								<Tag tagName={tag} key={tag} />
+							))}
+						</div>
+					</div>
+					<div className="ratehost-container">
+						<Rate rate={this.state.accomodation.rating} />
+						<Host
+							name={this.state.accomodation.host.name}
+							picture={this.state.accomodation.host.picture}
+						/>
+					</div>
 				</div>
-				<div className="ratehost-container">
-					<Rate rate={this.state.accomodation.rating} />
-					<Host
-						name={this.state.accomodation.host.name}
-						picture={this.state.accomodation.host.picture}
+				<div className="accomodation-dropdownsContainer">
+					<Dropdown
+						title="Description"
+						content={this.state.accomodation.description}
+					/>
+					<Dropdown
+						title="équipements"
+						content={this.state.accomodation.equipments}
 					/>
 				</div>
-				<Dropdown
-					title="Description"
-					content={this.state.accomodation.description}
-				/>
-				<Dropdown
-					title="équipements"
-					content={this.state.accomodation.equipments}
-				/>
 			</div>
 		)
 	}

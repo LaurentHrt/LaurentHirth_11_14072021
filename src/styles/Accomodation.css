@@ -2,11 +2,29 @@
 	margin: 0 15px;
 }
 
-.accomodation-page .ratehost-container {
+.accomodation-header {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	margin: 20px 0;
+}
+
+.ratehost-container {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 20px 0;
+}
+
+.accommodationTitle {
+	margin: 0;
+	color: #ff6060;
+	font-size: 18px;
+}
+
+.accommodationLocation {
+	margin-top: 5px;
+	color: #ff6060;
+	font-size: 14px;
 }
 
 .tags {
@@ -14,4 +32,27 @@
 	flex-direction: row;
 	flex-wrap: wrap;
 	gap: 10px;
+}
+
+@media screen and (min-width: 768px) {
+	.accomodation-page {
+		margin: 50px 75px;
+	}
+	.accomodation-header {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	.accommodationTitle {
+		font-size: 22px;
+	}
+	.ratehost-container {
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	.accomodation-dropdownsContainer {
+		display: flex;
+		flex-direction: row;
+		gap: 50px;
+	}
 }
