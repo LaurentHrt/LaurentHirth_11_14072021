@@ -24,3 +24,19 @@
 	width: 100%;
 	filter: brightness(70%);
 }
+
+@media screen and (min-width: 768px) {
+	.baseline {
+		border-radius: 25px;
+		margin: 50px 75px 0;
+		height: 150px;
+	}
+	.baseline img {
+		border-radius: 25px;
+	}
+	.baseline p {
+		text-align: center;
+		font-size: 30px;
+		width: 100%;
+	}
+}

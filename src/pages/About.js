@@ -1,7 +1,7 @@
 import React from 'react'
 import Dropdown from '../components/Dropdown'
 import '../styles/About.css'
-import aboutBackground from '../assets/pictures/aboutBackground-small.png'
+import aboutBackground from '../assets/pictures/aboutBackground.png'
 
 class About extends React.Component {
 	render() {

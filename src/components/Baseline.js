@@ -1,6 +1,6 @@
 import React from 'react'
 import '../styles/Baseline.css'
-import baselineBackground from '../assets/pictures/baselineBackground-small.png'
+import baselineBackground from '../assets/pictures/baselineBackground.png'
 
 class Baseline extends React.Component {
 	render() {

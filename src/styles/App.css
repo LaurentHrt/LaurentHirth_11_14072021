@@ -6,7 +6,7 @@ a {
 	text-decoration: none;
 	line-break: strict;
 	color: #ff6060;
-	white-space: nowrap;
+	/* white-space: nowrap; */
 }
 
 a:visited {

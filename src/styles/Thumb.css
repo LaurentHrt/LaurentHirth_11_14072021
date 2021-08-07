@@ -33,3 +33,16 @@
 	height: 100%;
 	width: 100%;
 }
+
+@media screen and (min-width: 768px) {
+	.thumb {
+		width: auto;
+		height: auto;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.thumb {
+		height: 25vw;
+	}
+}
