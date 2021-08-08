@@ -25,14 +25,29 @@
 	align-self: center;
 	padding-right: 10px;
 	font-size: x-large;
+	transition: 0.3s;
 }
 
 .dropdown__content {
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
 	border-bottom-right-radius: 10px;
 	border-bottom-left-radius: 10px;
 	background-color: #f6f6f6;
 	color: #ff6060;
 	padding: 15px 20px;
+	transition: 0.3s;
+}
+
+.dropdown.dropdown-is-open .dropdown__content {
+	opacity: 1;
+	position: static;
+	visibility: visible;
+}
+
+.dropdown.dropdown-is-open .chevron {
+	transform: rotateX(180deg);
 }
 
 .dropdown__content ul {

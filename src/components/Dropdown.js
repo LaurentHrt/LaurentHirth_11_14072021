@@ -11,23 +11,19 @@ class Dropdown extends React.Component {
 		const { title, content } = this.props
 
 		return (
-			<div className="dropdown">
+			<div
+				className={this.state.isOpen ? 'dropdown dropdown-is-open' : 'dropdown'}
+			>
 				<div
 					className="dropdown__header"
 					onClick={() => this.setState({ isOpen: !this.state.isOpen })}
 				>
 					<div className="title">{title}</div>
 					<div className="chevron">
-						<i
-							className={
-								this.state.isOpen ? 'fas fa-chevron-up' : 'fas fa-chevron-down'
-							}
-						></i>
+						<i className="fas fa-chevron-up"></i>
 					</div>
 				</div>
-				<div
-					className={this.state.isOpen ? 'dropdown__content' : 'display-none'}
-				>
+				<div className="dropdown__content">
 					{Array.isArray(content) ? (
 						<ul>
 							{content.map((element, index) => (
