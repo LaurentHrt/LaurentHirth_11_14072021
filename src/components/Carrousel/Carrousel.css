@@ -1,9 +1,12 @@
 .carrousel {
 	position: relative;
 	height: 255px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
 }
 
-.carrousel img {
+.carrouselImages {
 	position: absolute;
 	height: 100%;
 	object-fit: cover;
@@ -11,11 +14,30 @@
 	border-radius: 10px;
 }
 
+.leftArrow,
+.rightArrow {
+	height: 30px;
+	position: absolute;
+	z-index: 9999;
+}
+
+.leftArrow {
+	right: 10px;
+}
+
+.rightArrow {
+	left: 10px;
+}
+
 @media screen and (min-width: 768px) {
 	.carrousel {
 		height: 30vw;
 	}
-	.carrousel img {
+	.carrouselImages {
 		border-radius: 25px;
+	}
+	.leftArrow,
+	.rightArrow {
+		height: 40px;
 	}
 }
