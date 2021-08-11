@@ -6,6 +6,7 @@ import Carrousel from '../../components/Carrousel/Carrousel'
 import Host from '../../components/Host/Host'
 import Rate from '../../components/Rate/Rate'
 import Dropdown from '../../components/Dropdown/Dropdown'
+import AccomodationService from '../../service/accomodation.service'
 
 class Accomodation extends React.Component {
 	constructor(props) {
@@ -31,11 +32,11 @@ class Accomodation extends React.Component {
 	}
 
 	async getData() {
+		const accomodationService = new AccomodationService()
 		const id = this.props.match.params.id
-		const response = await fetch('../logements.json')
-		const data = await response.json()
+		const data = await accomodationService.getAccomodationData(id)
 		this.setState({
-			accomodation: data.find((accomodation) => accomodation.id === id),
+			accomodation: data,
 		})
 	}
 

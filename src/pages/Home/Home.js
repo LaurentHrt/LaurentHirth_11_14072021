@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import Baseline from '../../components/Baseline/Baseline'
 import Thumb from '../../components/Thumb/Thumb'
+import AccomodationService from '../../service/accomodation.service'
 import './Home.css'
 
 class Home extends React.Component {
@@ -14,8 +15,8 @@ class Home extends React.Component {
 	}
 
 	async getData() {
-		const response = await fetch('./logements.json')
-		const data = await response.json()
+		const accomodationService = new AccomodationService()
+		const data = await accomodationService.getAllThumbData()
 		this.setState({ data: data })
 	}
 
