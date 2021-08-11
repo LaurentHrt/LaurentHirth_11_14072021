@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Dropdown.css'
+import './Dropdown.css'
 
 class Dropdown extends React.Component {
 	constructor(props) {

@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Rate.css'
+import './Rate.css'
 
 class Rate extends React.Component {
 	render() {

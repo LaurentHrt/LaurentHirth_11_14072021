@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/Host.css'
+import './Host.css'
 
 class Host extends React.Component {
 	render() {

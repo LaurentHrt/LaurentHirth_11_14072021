@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
-import Baseline from '../components/Baseline'
-import Thumb from '../components/Thumb'
-import '../styles/Home.css'
+import Baseline from '../../components/Baseline/Baseline'
+import Thumb from '../../components/Thumb/Thumb'
+import './Home.css'
 
 class Home extends React.Component {
 	render() {

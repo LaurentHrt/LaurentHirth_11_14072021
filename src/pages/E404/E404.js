@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/E404.css'
+import './E404.css'
 
 class E404 extends React.Component {
 	render() {

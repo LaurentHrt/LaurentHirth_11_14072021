@@ -1,11 +1,11 @@
 import React from 'react'
 import { Redirect, withRouter } from 'react-router-dom'
-import '../styles/Accomodation.css'
-import Tag from './../components/Tag'
-import Carrousel from './../components/Carrousel'
-import Host from './../components/Host'
-import Rate from './../components/Rate'
-import Dropdown from './../components/Dropdown'
+import './Accomodation.css'
+import Tag from '../../components/Tag/Tag'
+import Carrousel from '../../components/Carrousel/Carrousel'
+import Host from '../../components/Host/Host'
+import Rate from '../../components/Rate/Rate'
+import Dropdown from '../../components/Dropdown/Dropdown'
 
 class Accomodation extends React.Component {
 	constructor(props) {
