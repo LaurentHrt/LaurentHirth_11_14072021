@@ -4,9 +4,23 @@ import Thumb from '../../components/Thumb/Thumb'
 import './Home.css'
 
 class Home extends React.Component {
-	render() {
-		const { data } = this.props
+	constructor(props) {
+		super(props)
+		this.state = { data: [] }
+	}
 
+	componentDidMount() {
+		this.getData()
+	}
+
+	async getData() {
+		const response = await fetch('./logements.json')
+		const data = await response.json()
+		this.setState({ data: data })
+	}
+
+	render() {
+		const { data } = this.state
 		return (
 			<Fragment>
 				<Baseline />

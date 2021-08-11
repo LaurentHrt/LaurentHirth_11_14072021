@@ -27,51 +27,47 @@ class Accomodation extends React.Component {
 	}
 
 	componentDidMount() {
+		this.getData()
+	}
+
+	async getData() {
 		const id = this.props.match.params.id
+		const response = await fetch('../logements.json')
+		const data = await response.json()
 		this.setState({
-			accomodation: this.props.data.find(
-				(accomodation) => accomodation.id === id
-			),
+			accomodation: data.find((accomodation) => accomodation.id === id),
 		})
 	}
 
 	render() {
-		return this.state.accomodation === undefined ? (
+		const { accomodation } = this.state
+
+		return accomodation === undefined ? (
 			<Redirect to="/E404" />
 		) : (
 			<div className="accomodation-page">
-				<Carrousel images={this.state.accomodation.pictures} />
+				<Carrousel images={accomodation.pictures} />
 				<div className="accomodation-header">
 					<div className="titletag-container">
-						<p className="accommodationTitle">
-							{this.state.accomodation.title}
-						</p>
-						<p className="accommodationLocation">
-							{this.state.accomodation.location}
-						</p>
+						<p className="accommodationTitle">{accomodation.title}</p>
+						<p className="accommodationLocation">{accomodation.location}</p>
 						<div className="tags">
-							{this.state.accomodation.tags.map((tag) => (
+							{accomodation.tags.map((tag) => (
 								<Tag tagName={tag} key={tag} />
 							))}
 						</div>
 					</div>
 					<div className="ratehost-container">
-						<Rate rate={this.state.accomodation.rating} />
+						<Rate rate={accomodation.rating} />
 						<Host
-							name={this.state.accomodation.host.name}
-							picture={this.state.accomodation.host.picture}
+							name={accomodation.host.name}
+							picture={accomodation.host.picture}
 						/>
 					</div>
 				</div>
 				<div className="accomodation-dropdownsContainer">
-					<Dropdown
-						title="Description"
-						content={this.state.accomodation.description}
-					/>
-					<Dropdown
-						title="équipements"
-						content={this.state.accomodation.equipments}
-					/>
+					<Dropdown title="description" content={accomodation.description} />
+					<Dropdown title="équipements" content={accomodation.equipments} />
 				</div>
 			</div>
 		)

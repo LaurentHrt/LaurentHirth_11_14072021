@@ -10,34 +10,19 @@ import E404 from './pages/E404/E404'
 import Accomodation from './pages/Accomodation/Accomodation'
 
 class App extends React.Component {
-	constructor(props) {
-		super(props)
-		this.state = { data: [] }
-	}
-
-	componentDidMount() {
-		this.getData()
-	}
-
-	async getData() {
-		const response = await fetch('logements.json')
-		const data = await response.json()
-		this.setState({ data: data })
-	}
-
 	render() {
 		return (
 			<Fragment>
 				<Header />
 				<Switch>
 					<Route exact path="/">
-						<Home data={this.state.data} />
+						<Home />
 					</Route>
 					<Route path="/about">
 						<About />
 					</Route>
 					<Route path="/accomodations/:id">
-						<Accomodation data={this.state.data} />
+						<Accomodation />
 					</Route>
 					<Route path="*">
 						<E404 />
