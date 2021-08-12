@@ -27,25 +27,31 @@ class Carrousel extends React.Component {
 
 	render() {
 		const { imageIndex } = this.state
+		const { images } = this.props
+
 		return (
 			<div className="carrousel">
-				<img
-					className="leftArrow"
-					src={leftArrow}
-					alt="left"
-					onClick={() => this.onClickLeftArrow()}
-				/>
+				{images.length > 1 ? (
+					<img
+						className="leftArrow"
+						src={leftArrow}
+						alt="left"
+						onClick={() => this.onClickLeftArrow()}
+					/>
+				) : null}
 				<img
 					className="carrouselImages"
 					src={this.props.images[imageIndex]}
 					alt={this.props.images[imageIndex]}
 				/>
-				<img
-					className="rightArrow"
-					src={rightArrow}
-					alt="right"
-					onClick={() => this.onClickRightArrow()}
-				/>
+				{images.length > 1 ? (
+					<img
+						className="rightArrow"
+						src={rightArrow}
+						alt="right"
+						onClick={() => this.onClickRightArrow()}
+					/>
+				) : null}
 			</div>
 		)
 	}
