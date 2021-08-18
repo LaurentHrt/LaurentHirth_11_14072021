@@ -13,21 +13,23 @@ class App extends React.Component {
 	render() {
 		return (
 			<Fragment>
-				<Header />
-				<Switch>
-					<Route exact path="/">
-						<Home />
-					</Route>
-					<Route path="/about">
-						<About />
-					</Route>
-					<Route path="/accomodations/:id">
-						<Accomodation />
-					</Route>
-					<Route path="*">
-						<E404 />
-					</Route>
-				</Switch>
+				<div className="wrapper">
+					<Header />
+					<Switch>
+						<Route exact path="/">
+							<Home />
+						</Route>
+						<Route path="/about">
+							<About />
+						</Route>
+						<Route path="/accomodations/:id">
+							<Accomodation />
+						</Route>
+						<Route path="*">
+							<E404 />
+						</Route>
+					</Switch>
+				</div>
 				<Footer />
 			</Fragment>
 		)

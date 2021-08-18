@@ -43,6 +43,6 @@
 
 @media screen and (min-width: 1200px) {
 	.thumb {
-		height: 25vw;
+		height: 300px;
 	}
 }
