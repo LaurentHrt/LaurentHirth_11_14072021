@@ -29,14 +29,14 @@
 	.baseline {
 		border-radius: 25px;
 		margin: 50px 75px 0;
-		height: 150px;
+		height: 223px;
 	}
 	.baseline img {
 		border-radius: 25px;
 	}
 	.baseline p {
 		text-align: center;
-		font-size: 30px;
+		font-size: 40px;
 		width: 100%;
 	}
 }
