@@ -1,11 +1,19 @@
-# Laurent Hirth
+# Projet 11 - Développez une application Web avec React et React Router
+
+## Laurent Hirth
 
 Openclassrooms - Parcours développeur Front-end
 
-Projet 11 - Développez une application Web avec React et React Router
+---
 
-# Usage
+## Installation
 
-`yarn install`
+```bash
+yarn install
+```
 
-`yarn start`
+## Usage
+
+```bash
+yarn start
+```
